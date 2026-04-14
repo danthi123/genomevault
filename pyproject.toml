@@ -82,7 +82,11 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**" = ["S"]
+# Tests intentionally use broad exception assertions (crypt4gh raises mixed
+# exception types from C code) and regex-like strings in pytest.raises
+# match= that are actually literal dots.  Also allow slightly longer lines
+# for readable fixture blobs.
+"tests/**" = ["S", "B017", "RUF043", "E501"]
 
 [tool.mypy]
 python_version = "3.10"
