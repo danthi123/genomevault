@@ -62,3 +62,16 @@ tests/fixtures/*.dec
 /scratch/
 /*.gvf
 /*.c4gh
+
+# Credentials — NEVER commit these.  The rule is both patterns so the
+# file cannot sneak in as .pypirc in the repo root or anywhere deeper.
+.pypirc
+**/.pypirc
+.netrc
+**/.netrc
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.token
+*.secret
